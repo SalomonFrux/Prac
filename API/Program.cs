@@ -31,7 +31,8 @@ namespace API
                 }
                 catch (Exception ex)
                 {
-                  Logger.CreateLogger(ex.Message);
+                  var errorLogger = Logger.CreateLogger<Program>();
+                  errorLogger.LogError(ex.Message);
                 }
             }
 
