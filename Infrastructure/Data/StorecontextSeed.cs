@@ -6,7 +6,7 @@ namespace Infrastructure.Data
     {
         public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory)
         {
-            
+            if(!context.Database.Migration())
         }
     }
 }
