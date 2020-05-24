@@ -1,0 +1,32 @@
+[
+    {
+        "Id":1,
+        "Name":"Mercedes Benz black",
+        "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
+        "Price": 200, 
+        "PictureUrl":"Images/Product/1.png",
+        "ProductTypeId":1,
+        "ProductBrandId":1
+
+    },
+    {
+        "Id":2,
+        "Name":"BMW I8",
+        "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
+        "Price": 100, 
+        "PictureUrl":"Images/Product/2.png",
+        "ProductTypeId":2,
+        "ProductBrandId":2
+    },
+    {
+
+        "Id":3,
+        "Name":"Toyota Corona",
+        "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
+        "Price": 350, 
+        "PictureUrl":"Images/Product/3.png",
+        "ProductTypeId":3,
+        "ProductBrandId":3
+    }
+
+]
