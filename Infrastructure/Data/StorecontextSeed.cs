@@ -9,7 +9,7 @@ namespace Infrastructure.Data
         {
             if (!context.Products.Any())
             {
-                
+                    
             }
         }
     }
