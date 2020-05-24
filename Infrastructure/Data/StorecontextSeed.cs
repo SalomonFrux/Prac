@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.Data
@@ -6,7 +7,10 @@ namespace Infrastructure.Data
     {
         public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory)
         {
-            if(!context.Database.Migration())
+            if (!context.Products.Any())
+            {
+                
+            }
         }
     }
 }
