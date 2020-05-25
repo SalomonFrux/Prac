@@ -32,6 +32,8 @@ namespace API
             services.AddControllers();
             services.AddDbContext<StoreContext>(options =>options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductBrands, ProductBrands>();
+            services.AddScoped<IProductTypes, ProductTypes>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
