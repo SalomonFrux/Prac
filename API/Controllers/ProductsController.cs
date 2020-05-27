@@ -31,7 +31,8 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Products>>> GetProductsList()
         {
-            var products = await _genericProducts.GetEntitiesListSpec() //Create the specification class now
+            var spec = new ProductsWithBrandAndTypeSpec();
+            var products = await _genericProducts.GetEntitiesListSpec(spec); //Create the specification class now
             return Ok(products);
         }
 
