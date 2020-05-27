@@ -22,9 +22,9 @@ namespace Core.Specification
 
         public List<Expression<Func<T, object>>> IncludesExp {get; } = new List<Expression<Func<T, object>>>();
 
-        private void Addinclude(Expression<Func<T, object>> NewInclude)
+       protected void Addinclude(Expression<Func<T, object>> NewInclude)
         {
-            IncludesExp.Add(NewInclude);
+            IncludesExp.Add(NewInclude);  // x=> x.ProductBrand ...
         }
     }
 }
