@@ -24,7 +24,6 @@ namespace Infrastructure.Data.IImplemention
             .Include(p => p.ProductType)
             .FirstOrDefaultAsync(p => p.Id == id);
 
-
         }
 
         public async Task<IReadOnlyList<Products>> GetProductsAsync()
