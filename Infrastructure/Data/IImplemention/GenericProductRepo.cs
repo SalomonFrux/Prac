@@ -1,7 +1,9 @@
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specification;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data.IImplemention
@@ -17,12 +19,36 @@ namespace Infrastructure.Data.IImplemention
 
         public async Task<IReadOnlyList<T>> GetEntitiesAsync()
         {
-            return  await _context.Set<T>().ToListAsync();
+            return await _context.Set<T>().ToListAsync();
         }
-
         public Task<T> GetEntityByIdAsync(int id)
         {
             return _context.Set<T>().FirstOrDefaultAsync(x => x.Id == id);
         }
+
+
+
+
+
+
+        public async Task<IReadOnlyList<T>> GetEntitiesListSpec(ISpecification<T> spec)
+        {
+          return await ApplySpecification(spec).ToListAsync();
+           
+        }
+
+        public Task<T> GetEntitiesSpec(ISpecification<T> spec)
+        {
+           return ApplySpecification(spec).FirstOrDefaultAsync();
+        }
+
+
+        private  IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+         return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
+        }
+
+
+
     }
 }

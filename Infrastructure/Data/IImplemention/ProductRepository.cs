@@ -19,6 +19,9 @@ namespace Infrastructure.Data.IImplemention
 
         public async Task<Products> GetProductByIdAsync(int id)
         {
+
+        //return product where id is equal to the passed in iD and include  the BRAND and  TYPE
+            
             return await _context.Products
             .Include(p => p.ProductBrand)
             .Include(p => p.ProductType)
