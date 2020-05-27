@@ -1,3 +1,5 @@
+using System;
+using System.Linq.Expressions;
 using Core.Specification;
 
 namespace Core.Entities
@@ -8,6 +10,11 @@ namespace Core.Entities
         {
            Addinclude( x=> x.ProductBrand);
            Addinclude( x=> x.ProductType);
+        }
+
+        public ProductsWithBrandAndTypeSpec(int id) 
+        : base(x=> x.Id == id)
+        {
         }
     }
 }

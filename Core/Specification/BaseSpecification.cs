@@ -12,10 +12,9 @@ namespace Core.Specification
             
         }
 
-        public BaseSpecification(Expression<Func<T, bool>> conditionExp, List<Expression<Func<T, object>>> includesExp)
+        public BaseSpecification(Expression<Func<T, bool>> conditionExp)
         {
             ConditionExp = conditionExp;
-            IncludesExp = includesExp;
         }
 
         public Expression<Func<T, bool>> ConditionExp{get;} 

@@ -13,26 +13,27 @@ namespace API.Controllers
         private readonly IGenericProductRepo<Products> _genericProducts;
         private readonly IGenericProductRepo<ProductType> _genericType;
         private readonly IGenericProductRepo<ProductBrand> _genericBrand;
-
         public ProductsController(IGenericProductRepo<Products> genericProducts, IGenericProductRepo<ProductType> genericType, IGenericProductRepo<ProductBrand> genericBrand)
         {
             _genericProducts = genericProducts;
             _genericType = genericType;
             _genericBrand = genericBrand;
         }
+          
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Products>> GetProducts(int id)
         {
-            return await _genericProducts.GetEntityByIdAsync(id);
+            var newspec = new ProductsWithBrandAndTypeSpec(id);
+            return await _genericProducts.GetEntitiesSpec(newspec);
         }
 
 
         [HttpGet]
         public async Task<ActionResult<List<Products>>> GetProductsList()
         {
-            var spec = new ProductsWithBrandAndTypeSpec();
-            var products = await _genericProducts.GetEntitiesListSpec(spec); //Create the specification class now
+             var newspec = new ProductsWithBrandAndTypeSpec();
+            var products = await _genericProducts.GetEntitiesListSpec(newspec); //Create the specification class now
             return Ok(products);
         }
 
