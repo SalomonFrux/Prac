@@ -48,7 +48,7 @@ namespace Infrastructure.Data.IImplemention
          return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }
 
-
+        
 
     }
 }
