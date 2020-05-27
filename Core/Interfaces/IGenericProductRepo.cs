@@ -7,9 +7,12 @@ namespace Core.Interfaces
 {
     public interface IGenericProductRepo<T> where T: BaseEntity
     {
-        //  Task<T> GetEntityByIdAsync(int id);
-        //  Task<IReadOnlyList<T>> GetEntitiesAsync();       
-        Task<T> GetEntitiesSpec(ISpecification<T> spec);
-        Task<IReadOnlyList<T>> GetEntitiesListSpec(ISpecification<T> spec);   
+          Task<T> GetEntityByIdAsync(int id);
+          Task<IReadOnlyList<T>> GetEntitiesAsync();       
+
+
+          //The specification is only used for the product Entity that needs to retrun the type and brand too
+        Task<T> GetTSpec(ISpecification<T> spec);
+        Task<IReadOnlyList<T>> GetTListSpec(ISpecification<T> spec);   
     }
 }

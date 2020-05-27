@@ -27,13 +27,13 @@ namespace Infrastructure.Data.IImplemention
         }
 
 
-                public async Task<IReadOnlyList<T>> GetEntitiesListSpec(ISpecification<T> spec)
+                public async Task<IReadOnlyList<T>> GetTListSpec(ISpecification<T> spec)
         {
           return await ApplySpecification(spec).ToListAsync();
            
         }
 
-        public Task<T> GetEntitiesSpec(ISpecification<T> spec)
+        public Task<T> GetTSpec(ISpecification<T> spec)
         {
            return ApplySpecification(spec).FirstOrDefaultAsync();
         }

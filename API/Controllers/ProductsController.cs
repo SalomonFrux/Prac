@@ -25,7 +25,7 @@ namespace API.Controllers
         public async Task<ActionResult<Products>> GetProducts(int id)
         {
             var newspec = new ProductsWithBrandAndTypeSpec(id);
-            return await _genericProducts.GetEntitiesSpec(newspec);
+            return await _genericProducts.GetTSpec(newspec);
         }
 
 
@@ -33,7 +33,7 @@ namespace API.Controllers
         public async Task<ActionResult<List<Products>>> GetProductsList()
         {
              var newspec = new ProductsWithBrandAndTypeSpec();
-            var products = await _genericProducts.GetEntitiesListSpec(newspec); //Create the specification class now
+            var products = await _genericProducts.GetTListSpec(newspec); //Create the specification class now
             return Ok(products);
         }
 
